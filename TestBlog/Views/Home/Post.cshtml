@@ -1,0 +1,18 @@
+﻿@using TestBlog.Models.EntityFramework
+@model Post
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="is-flex is-flex-direction-column has-background-black p-5">
+    <image class="image has-background-white" alt="placeholder image" src=@Model.Image />
+    <h1 class="is-size-1 p-5 title has-text-white">@Model.Title</h1>
+    <time class="has-text-white">@Model.CreatedDate.Value.ToShortDateString()</time>
+    <p class="mt-4 has-text-white">@Model.Body</p>
+    <div class="mt-5">
+        <a class="button has-background-danger has-text-white" href="/Home/Delete/@Model.ID">Delete</a>
+        <a class="button has-background-info has-text-white" href="/Home/Update/@Model.ID">Update</a>
+    </div>
+</div>
+

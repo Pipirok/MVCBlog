@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <link rel="stylesheet" href="~/Content/bulma.css" />
+</head>
+<body>
+    <div class="main-cont">
+        @Html.Partial("_Header")
+        <main class="container pt-5 pb-5">
+            @RenderBody()
+        </main>
+        @Html.Partial("_Footer")
+    </div>
+</body>
+</html>

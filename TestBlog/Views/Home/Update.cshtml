@@ -1,0 +1,44 @@
+﻿@using TestBlog.Models.EntityFramework
+@model Post
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container container-fluid">
+    <h1 class="is-size-1 has-text-white">Update a post</h1>
+    <hr />
+    <form class="p-5 form has-background-black has-text-white" method="post" action="/Home/Update">
+        <div class="field">
+            <label class="label has-text-white">Title</label>
+            <div class="control">
+                @Html.TextBoxFor(m => m.Title, new { @class = "input" })
+            </div>
+        </div>
+        <div class="field">
+            <label class="label has-text-white">Thumbnail link</label>
+            <div class="control">
+                @Html.TextBoxFor(m => m.Thumbnail, new { @class = "input" })
+            </div>
+        </div>
+        <div class="field">
+            <label class="label has-text-white">Image link</label>
+            <div class="control">
+                @Html.TextBoxFor(m => m.Image, new { @class = "input" })
+            </div>
+        </div>
+        <div class="field">
+            <label class="label has-text-white">Body</label>
+            <div class="control">
+                @Html.TextAreaFor(m => m.Body, new { @class = "textarea" })
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button type="submit" class="button is-link">Submit</button>
+            </div>
+        </div>
+        @Html.HiddenFor(m => m.ID)
+    </form>
+</div>
+

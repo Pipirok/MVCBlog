@@ -1,0 +1,37 @@
+﻿@using TestBlog.Models.EntityFramework
+@model List<Project>
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h1 class="is-size-1 has-text-white has-text-centered">Projects</h1>
+    <hr/>
+    @foreach (Project project in Model)
+    {
+        <div class="card mt-5 has-background-black has-text-white">
+            <div class="card-image">
+                <figure class="image">
+                    <img src=@project.Image alt="An image of the project" />
+                </figure>
+            </div>
+            <div class="card-content p-3">
+                <div class="content">
+                    <h2 class="title is-size-2 has-text-white has-text-centered">
+                        @project.Name
+                    </h2>
+                </div>
+            </div>
+            <div class="content p-5">
+                <p class="is-size-5">
+                    @project.Description
+                </p>
+                <br />
+                <a class="has-text-link" href="@project.Href" rel="noreferrer nofollow" target="_blank">View site</a>
+            </div>
+        </div>
+    }
+
+</div>
+
